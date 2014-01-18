@@ -38,6 +38,9 @@ var calculateSize = function(circumference){
   }else if(circumference <= 63.5){
     hatSizeObject.fitted = "8";
     hatSizeObject.easyFit= "XXL";
+  }else {
+    hatSizeObject.fitted = "8";
+    hatSizeObject.easyFit= "Giant head";
   }
 
   return hatSizeObject;
