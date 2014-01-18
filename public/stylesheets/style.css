@@ -1,8 +1,33 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('/vendor/img/nice_snow.png');
+  background-repeat:repeat;
 }
 
-a {
-  color: #00B7FF;
+
+#box {
+  text-align: center;
+  background-color: rgba(255, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0 8px 40px ;
+}
+
+#box h1 {
+  color: white;
+  font-family: fantasy;
+}
+
+
+#startbutton {
+  background-color: #2B3A36;
+  width: 30%;
+}
+
+#diagrambox {
+  background-color: white;
+  border-radius: 10px;
+
 }
