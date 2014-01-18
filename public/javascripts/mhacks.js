@@ -1,5 +1,4 @@
 
-
 //page starts with listener disabled
 keypress.stop_listening()
 $('#prog').toggle()
@@ -59,6 +58,10 @@ var key_store = {
   },
   '=': {
     position: 11.6,
+    pressed: false
+  },
+  'backspace': {
+    position: 12.6,
     pressed: false
   },
   'tab': {
@@ -165,8 +168,8 @@ var key_store = {
     position: 11.3,
     pressed: false,
   },
-  'shift': {
-    position: 0,
+  'enter': {
+    position: 12.6,
     pressed: false
   },
   'z': {
