@@ -1,4 +1,4 @@
 FacePress
 =========
 
-web app used to determine hat size
+Press your face against the keyboard to determine your hat size!
