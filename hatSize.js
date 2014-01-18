@@ -43,5 +43,3 @@ var calculateSize = function(circumference){
   return hatSizeObject;
 
 }
-
-console.log(calculateSize(57));
