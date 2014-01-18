@@ -1,4 +1,3 @@
-
 //page starts with listener disabled
 keypress.stop_listening()
 $('#prog').toggle()
@@ -260,7 +259,7 @@ function calculateGirth() {
 
   }
   else{
-  $('#instructions').text('Your fitted hat size could not be accurately read, please try again.');
+  $('#instructions').text('Your hat size could not be accurately read. Please try again.');
   }
     $('#startbutton').removeAttr('disabled','disabled').text('Measure Again?')
     calculatingGirth = false
