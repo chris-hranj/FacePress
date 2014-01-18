@@ -269,9 +269,13 @@ $('*').keypress(function(e) {
 function calculateGirth() {
   //convert keyboard distance to distance in centimeters
   var CONVERSIONFACTOR = 1.875;
-  var foreheadCentimeters = foreheadGirth * CONVERSIONFACTOR
-  var circumference = foreheadCentimeters * 4
+  var foreheadCentimeters = foreheadGirth * CONVERSIONFACTOR;
+  var circumference = foreheadCentimeters * 4;
+  var size = calculateSize(circumference);
 
-  $('#instructions').text('Your head circumference is: ' + circumference +
-    ' centimeters');
+  $('#instructions').text('Your fitted hat size is: ' + size.fitted + '\n' + 'Your easyFit size is ' +  size.easyFit);
 }
+
+
+
+
