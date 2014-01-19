@@ -211,6 +211,7 @@ var key_store = {
 }
 
 $('#startbutton').click(function() {
+  $('#hatlink').empty();
   calculatingGirth = true // set girth flag for animate
   animate(1)
   $('#startbutton').attr('disabled','disabled').text('Measuring in progress...') // startbutton is disabled while countdown begins
@@ -246,7 +247,6 @@ function calculateGirth() {
   var foreheadCentimeters = foreheadGirth * CONVERSIONFACTOR;
   var circumference = foreheadCentimeters * 4;
   var size = calculateSize(circumference);
-  $('#hatlink').empty();
 
   if (size.fitted != null){
     $('#instructions').text('Your fitted hat size is: ' + size.fitted + '\n' + 'Your easyFit size is ' +  size.easyFit);
