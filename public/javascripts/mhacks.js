@@ -246,6 +246,7 @@ function calculateGirth() {
   var foreheadCentimeters = foreheadGirth * CONVERSIONFACTOR;
   var circumference = foreheadCentimeters * 4;
   var size = calculateSize(circumference);
+  $('#hatlink').empty();
 
   if (size.fitted != null){
     $('#instructions').text('Your fitted hat size is: ' + size.fitted + '\n' + 'Your easyFit size is ' +  size.easyFit);
