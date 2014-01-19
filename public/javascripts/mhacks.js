@@ -1,5 +1,6 @@
+
+
 //page starts with listener disabled
-keypress.stop_listening()
 $('#prog').toggle()
 
 var foreheadGirth
@@ -57,10 +58,6 @@ var key_store = {
   },
   '=': {
     position: 11.6,
-    pressed: false
-  },
-  'backspace': {
-    position: 12.6,
     pressed: false
   },
   'tab': {
@@ -167,8 +164,8 @@ var key_store = {
     position: 11.3,
     pressed: false,
   },
-  'enter': {
-    position: 12.6,
+  'shift': {
+    position: 0,
     pressed: false
   },
   'z': {
@@ -214,21 +211,17 @@ var key_store = {
 }
 
 $('#startbutton').click(function() {
-  calculatingGirth = true
+  calculatingGirth = true // set girth flag for animate
   animate(1)
-  //keypress starts listening for keys when startbutton is pressed
-  keypress.listen();
-  //startbutton is disabled while countdown begins
-  $('#startbutton').attr('disabled','disabled').text('Measuring in progress...');
-  //on-screen instructions are given
-  $('#instructions').text("Smash the front of your face on the keyboard.")
+  $('#startbutton').attr('disabled','disabled').text('Measuring in progress...') // startbutton is disabled while countdown begins
+  $('#instructions').text("Smash the front of your face on the keyboard.")       // on-screen instructions are given
 
   //timer beings
   $('#prog').slideDown()
-  moveProgressBar(0)
+  moveProgressBar(0)     // start progress animation bar at 0%
 
 
-  //used for tesing keypress recognition
+  // used for tesing keypress recognition
   keypress.sequence_combo("up up down down left right left right b a enter", function() {
     document.body.innerText = 'konami code'
   })
@@ -254,17 +247,18 @@ function calculateGirth() {
   var circumference = foreheadCentimeters * 4;
   var size = calculateSize(circumference);
 
-  if (size.fitted != null){
+  if (size.fitted != null)
     $('#instructions').text('Your fitted hat size is: ' + size.fitted + '\n' + 'Your easyFit size is ' +  size.easyFit);
+  else
+    $('#instructions').text('Your fitted hat size could not be accurately read, please try again.');
 
-  }
-  else{
-  $('#instructions').text('Your hat size could not be accurately read. Please try again.');
-  }
-    $('#startbutton').removeAttr('disabled','disabled').text('Measure Again?')
-    calculatingGirth = false
+  $('#startbutton').removeAttr('disabled','disabled').text('Measure Again?')
+  calculatingGirth = false
 }
 
+/*
+ * Give life to the man and his keyboard
+ */
 function animate(dir) {
   $('#face').transition({ y: 35 + 'px' })
     .transition({ rotate: dir * 50 })
@@ -278,27 +272,24 @@ function animate(dir) {
 
 function getMinMax() {
   var max, min
-  for (i in key_store) {
-    if (key_store[i]['pressed']) {
-      console.log('pressed', i)
-      if (typeof min === 'undefined' || (key_store[i]['position'] < min))
-        min = key_store[i]['position']
-      if (typeof max === 'undefined' || (key_store[i]['position'] > max))
-        max = key_store[i]['position']
-      }
-      key_store[i]['pressed'] = false
+
+  for (key in key_store) {
+    if (key_store[key]['pressed']) {
+      if (typeof min === 'undefined' || (key_store[key]['position'] < min))
+        min = key_store[key]['position']
+      if (typeof max === 'undefined' || (key_store[key]['position'] > max))
+        max = key_store[key]['position']
     }
-    //if (typeof foreheadGirth === "undefined") {
-      foreheadGirth = max - min
-      calculateGirth()
-    //}
+    key_store[key]['pressed'] = false
+  }
+  foreheadGirth = max - min
+  calculateGirth()
 }
 
 
 function moveProgressBar(i) {
   setTimeout(function() {
     $('#prog .meter').attr('style', 'width: ' + i + '%')
-    console.log(i)
     if (i < 100)
       moveProgressBar(i + 0.25)
     else
