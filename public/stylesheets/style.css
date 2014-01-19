@@ -15,8 +15,9 @@ body {
   box-shadow: 0 8px 40px ;
 }
 
-#box h1 {
+#title  {
   color: white;
+  font-size: 96px;
   font-family: fantasy;
 }
 
@@ -29,5 +30,12 @@ body {
 #diagrambox {
   background-color: white;
   border-radius: 10px;
+
+}
+
+#woman {
+  position: absolute;
+  width: 25%;
+  left: 0
 
 }
