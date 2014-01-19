@@ -247,14 +247,16 @@ function calculateGirth() {
   var circumference = foreheadCentimeters * 4;
   var size = calculateSize(circumference);
 
-  if (size.fitted != null)
+  if (size.fitted != null){
     $('#instructions').text('Your fitted hat size is: ' + size.fitted + '\n' + 'Your easyFit size is ' +  size.easyFit);
-  else
-    $('#instructions').text('Your fitted hat size could not be accurately read, please try again.');
     $('#hatlink').append( "<h3><a href='" + size.link + "'>Buy one here</a></h3>");
+  }else{
+    $('#instructions').text('Your fitted hat size could not be accurately read, please try again.');
+    $('#hatlink').empty();
+  }
 
-    $('#startbutton').removeAttr('disabled','disabled').text('Measure Again?')
-    calculatingGirth = false
+  $('#startbutton').removeAttr('disabled','disabled').text('Measure Again?')
+  calculatingGirth = false
 }
 
 /*
