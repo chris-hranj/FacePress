@@ -236,7 +236,7 @@ keypress.combo("shift s", function() {
 
 // When any key gets pressed, "pressed" is set to true
 $('*').keypress(function(e) {
-  var key = String.fromCharCode(e.charCode)
+  var key = String.fromCharCode(e.charCode).toLowerCase()
   key_store[key]['pressed'] = true
 })
 
