@@ -251,9 +251,10 @@ function calculateGirth() {
     $('#instructions').text('Your fitted hat size is: ' + size.fitted + '\n' + 'Your easyFit size is ' +  size.easyFit);
   else
     $('#instructions').text('Your fitted hat size could not be accurately read, please try again.');
+    $('#hatlink').append( "<h3><a href='" + size.link + "'>Buy one here</a></h3>");
 
-  $('#startbutton').removeAttr('disabled','disabled').text('Measure Again?')
-  calculatingGirth = false
+    $('#startbutton').removeAttr('disabled','disabled').text('Measure Again?')
+    calculatingGirth = false
 }
 
 /*
