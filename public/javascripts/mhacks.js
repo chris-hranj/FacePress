@@ -1,5 +1,3 @@
-
-
 //page starts with listener disabled
 $('#prog').toggle()
 
