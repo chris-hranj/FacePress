@@ -209,7 +209,7 @@ var key_store = {
 }
 
 $('#startbutton').click(function() {
-  $('#hatlink').empty();
+  // $('#hatlink').empty();
   calculatingGirth = true // set girth flag for animate
   animate(1)
   $('#startbutton').attr('disabled','disabled').text('Measuring in progress...') // startbutton is disabled while countdown begins
@@ -248,10 +248,10 @@ function calculateGirth() {
 
   if (size.fitted != null){
     $('#instructions').text('Your fitted hat size is: ' + size.fitted + '\n' + 'Your easyFit size is ' +  size.easyFit);
-    $('#hatlink').append( "<h3><a href='" + size.link + "'>Buy one here</a></h3>");
+    // $('#hatlink').append( "<h3><a href='" + size.link + "'>Buy one here</a></h3>");
   }else{
     $('#instructions').text('Your fitted hat size could not be accurately read, please try again.');
-    $('#hatlink').empty();
+    // $('#hatlink').empty();
   }
 
   $('#startbutton').removeAttr('disabled','disabled').text('Measure Again?')

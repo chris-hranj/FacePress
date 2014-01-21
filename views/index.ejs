@@ -9,51 +9,53 @@
 
   <body>
     <div class="row" id="box">
-      <h1>FacePress</h1>
-      <h3 class="large-12 columns" id="instructions">Press your face against the keyboard to determine your hat size.</h3>
-      <div id="hatlink"></div>
-      <p id="countdown"></p>
+      <div class="row">
+        <div class="large-12 columns">
+          <p id="title"><img id="woman" src="/images/get_educated.png" />FacePress</p>
+        </div>
+      </div> <h3 class="large-9 large-centered columns" id="instructions">Press your face against the keyboard to determine your hat size.</h3>
 
       <div class="row">
         <div class="row">
           <a href="#" class="button radius round" id="startbutton">I'm ready!</a>
         </div>
 
-          <!-- progress bar -->
-          <div class="nice round progress large-4 large-centered columns" id="prog">
-            <span class="meter" style="width: 0%"></span>
-          </div>
+        <!-- progress bar -->
+        <div class="nice round progress large-4 large-centered columns" id="prog">
+          <span class="meter" style="width: 0%"></span>
         </div>
+      </div>
 
-        <!-- diagram for instructions -->
-        <div class="row">
-          <div class="large-4 large-centered columns" id="diagrambox">
+      <!-- diagram for instructions -->
+      <div class="row">
+        <div class="large-4 large-centered columns" id="diagrambox">
 
-            <!-- face -->
-            <img id="face" src="/images/facepress-guy.png" />
-            <br>
-            <!-- keyboard -->
-            <img id="keyboard" src="/images/keyboard.gif" />
-          </div>
+          <!-- face -->
+          <img id="face" src="/images/facepress-guy.png" />
+          <br>
+          <!-- keyboard -->
+          <img id="keyboard" src="/images/keyboard.gif" />
         </div>
         <div class="row">
           <h5 class="large-6 columns large-offset-3" id="instructions">For the best results: Roll your forehead from side to side(not including your temples) against the keyboard and aim for the home row.</h5>
         </div>
       </div>
-
-    <!-- close box -->
     </div>
 
-    <!-- fork on github -->
-    <a href="https://github.com/chris-hranj/FacePress"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <!-- close box -->
+  </div>
 
-    <!-- SCRIPTS -->
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="/vendor/js/jquery.transit.min.js"></script>
-    <script src="/vendor/js/foundation.min.js"></script>
-    <script src="/javascripts/hatSize.js"></script>
-    <script src="/javascripts/mhacks.js"></script>
-  </body>
+  <!-- fork on github -->
+  <a href="https://github.com/chris-hranj/FacePress"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+  <!-- woman -->
+  <!-- SCRIPTS -->
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="/vendor/js/jquery.transit.min.js"></script>
+  <script src="/vendor/js/foundation.min.js"></script>
+  <script src="/javascripts/hatSize.js"></script>
+  <script src="/javascripts/mhacks.js"></script>
+</body>
 
 </html>
