@@ -219,17 +219,6 @@ $('#startbutton').click(function() {
   $('#prog').slideDown()
   moveProgressBar(0)     // start progress animation bar at 0%
 
-
-  // used for tesing keypress recognition
-  keypress.sequence_combo("up up down down left right left right b a enter", function() {
-    document.body.innerText = 'konami code'
-  })
-})
-
-//used for testing keypress recognition
-keypress.combo("shift s", function() {
-  document.body.innerText = 'shift s'
-  console.log("You pressed shift and s")
 })
 
 
